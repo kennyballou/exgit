@@ -7,7 +7,7 @@ defmodule Exgit.Escript do
   Main entry for Exgit
 
     iex> main([])
-    :error
+    {:error, "Missing Argument"}
   """
   @spec main(List.t) :: binary | :error | {:error, binary}
   def main([]) do
@@ -24,8 +24,6 @@ defmodule Exgit.Escript do
     args
     |> hd()
     |> parse_packfile()
-    |> inspect()
-    |> IO.puts
   end
 
   @doc """

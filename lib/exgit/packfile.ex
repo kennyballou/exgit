@@ -13,6 +13,10 @@ defmodule Exgit.Packfile do
                                             binary,
                                             binary}]
   def parse_objects(n, pack) do
-    nil
+    pack |> IO.inspect
+  end
+
+  defp parse_object(data) do
+    <<type :: size(4), _>> = data
   end
 end
